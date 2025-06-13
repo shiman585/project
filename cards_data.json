@@ -1,0 +1,64 @@
+let data=[
+
+{
+    "img" : "IMAGES/1.png",
+    "title" : "FUNGI  PIZZA ",
+    "des" : "PRICE $20",
+    "btn" : " BUY  NOW"
+},
+
+{
+    "img" : "IMAGES/2.png",
+    "title" : "MARINARA  PIZZA ",
+    "des" : "PRICE $30",
+    "btn" : " BUY  NOW"
+},
+{
+    "img" : "IMAGES/3.png",
+    "title" : "MARGHERITA PIZZA " ,
+    "des" : "PRICE $15",
+    "btn" : " BUY  NOW"
+},
+{
+    "img" : "IMAGES/4.png",
+    "title" : " HAMBURGER",
+    "des" : "PRICE $25",
+    "btn" : " BUY  NOW"
+},
+{
+    "img" : "IMAGES/5.png",
+    "title" : "MARGHERITA PIZZA",
+    "des" : "PRICE $19",
+    "btn" : " BUY  NOW"
+},
+{
+    "img" : "IMAGES/6.png",
+    "title" : "MILANESE  PIZZA",
+    "des" : "PRICE $25",
+    "btn" : " BUY  NOW"
+},
+{
+    "img" : "IMAGES/7.png",
+    "title" : "BLACK HAMBURGER",
+    "des" : "PRICE $25",
+    "btn" : " BUY  NOW"
+},
+{
+    "img" : "IMAGES/8.png",
+    "title" : "MUSH BURGER",
+    "des" : "PRICE $16",
+    "btn" : " BUY  NOW"
+},
+{
+    "img" : "IMAGES/9.png",
+    "title" : "PEPPERONI PIZZA ",
+    "des" : "PRICE $20",
+    "btn" : " BUY  NOW"
+}
+// {
+//     "img" : "IMAGES/PRO 10 WEEPING TIGER.png",
+//     "title" : "WEEPING TIGER FOOD",
+//     "des" : "PRICE $25",
+//     "btn" : " BUY  NOW"
+// }
+]

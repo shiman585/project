@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL PRODUCTS</title>
+    <link rel="shortcut icon" href="IMAGES/LOGO.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .a a:hover {
+            text-transform: uppercase;
+        }
+        .nav-link {
+            color: white !important;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #ffc107 !important;
+            text-transform: uppercase;
+        }
+        .card {
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .btn-custom {
+            background-color: black;
+            color: white;
+        }
+        .btn:hover{
+            color: #ffc107;
+        }
+         /* footer */
+         .footer {
+            background-color: black;
+            color: white;
+            padding: 2rem 0;
+        }
+        .footer a {
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .footer a:hover {
+            color: #ffc107;
+        }
+        .social-icons a {
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body style="background-color: beige;">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-dark position-sticky top-0" style="z-index: 2; background-color: black;">
+        <div class="container-fluid">
+            <div style="padding-right: 50px;" class="img">
+                <img src="IMAGES/LOGO.png" alt="" height="60px">
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="a nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="a nav-item">
+                        <a class="nav-link text-white" href="about.html">About Us</a>
+                    </li>
+                    <li class="a nav-item">
+                        <a class="nav-link text-white" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="a nav-item">
+                        <a class="nav-link text-white" href="feedback.html">Feedback</a>
+                    </li>
+                    <li class="a nav-item">
+                        <a class="nav-link text-white" href="gallery.html">Gallery</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="showall.html">Show All</a>
+                        </li>
+                    </li>
+                </ul>
+                <a href="login.html"><button class="btn btn-outline-light m-2">Login</button></a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+ 
+
+    <!-- Cards Data Start -->
+    <div class="container">
+        <div class="row m-2">
+            <div class="col">
+                <h1 class="text-center">ALL PRODUCTS</h1>
+            </div>
+        </div>
+        <div class="row" id="card">
+            <!-- Cards will be dynamically inserted here -->
+        </div>
+    </div>
+    <!-- Cards Data End -->
+
+    <!-- Footer Start -->
+    <footer style="background-color: black; position: relative; top: 100px;" class="bg-body-tertiary text-center text-white">
+        <div class="container p-4 pb-0">
+            <section class="mb-4">
+                <a target="_blank" data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #3b5998;" href="https://www.facebook.com/" role="button"><i class="fab fa-facebook-f"></i></a>
+                <a target="_blank" data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #dd4b39;" href="https://www.google.com/" role="button"><i class="fab fa-google"></i></a>
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #ac2bac;" href="https://www.instagram.com/" role="button"><i class="fab fa-instagram"></i></a>
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #0082ca;" href="https://www.linkedin.com/" role="button"><i class="fab fa-linkedin-in"></i></a>
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #333333;" href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fdotnet%2Froslyn%2Fissues%2Fnew%2Fchoose" role="button"><i class="fab fa-github"></i></a>
+            </section>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2025 Copyright : Project.com
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <script>
+        // Define the card data
+        const card = [
+        {
+    "img" : "IMAGES/1.png",
+    "title" : "FUNGI",
+    "des" : "PRICE $20",
+    "btn" : " BUY  NOW"
+},
+
+{
+    "img" : "IMAGES/2.png",
+    "title" : "MARINARA",
+    "des" : "PRICE $30",
+    "btn" : " BUY  NOW"
+},
+{
+    "img" : "IMAGES/3.png",
+    "title" : "MARGHERITA",
+    "des" : "PRICE $15",
+    "btn" : " BUY  NOW"
+},
+{
+    "img" : "IMAGES/4.png",
+    "title" : "CLASSIC HAMBURGER",
+    "des" : "PRICE $25",
+    "btn" : " BUY  NOW"
+},
+{
+    "img" : "IMAGES/5.png",
+    "title" : "MARGHERITA PIZZA",
+    "des" : "PRICE $19",
+    "btn" : " BUY  NOW"
+},
+{
+    "img" : "IMAGES/6.png",
+    "title" : "MILANESE PIZZA",
+    "des" : "PRICE $25",
+    "btn" : " BUY  NOW"
+},
+{
+    "img" : "IMAGES/7.png",
+    "title" : "BLACK HAMBURGER",
+    "des" : "PRICE $25",
+    "btn" : " BUY  NOW"
+},
+{
+    "img" : "IMAGES/8.png",
+    "title" : "MUSHROOM BURGER",
+    "des" : "PRICE $16",
+    "btn" : " BUY  NOW"
+},
+{
+    "img" : "IMAGES/9.png",
+    "title" : "VEGGIE PIZZA",
+    "des" : "PRICE $20",
+    "btn" : " BUY  NOW"
+},
+{
+    "img" : "IMAGES/PRO 10 WEEPING TIGER.png",
+    "title" : "WEEPING TIGER",
+    "des" : "PRICE $25",
+    "btn" : " BUY  NOW"
+},
+{
+    "img" : "IMAGES/PRO 11 FISH SALAD.png",
+    "title" : "FISH SALAD",
+    "des" : "PRICE $35",
+    "btn" : " BUY  NOW"
+},
+{
+    "img" : "IMAGES/PRO 12 GREEN CURRY.png",
+    "title" : "GREEN CURRY",
+    "des" : "PRICE $40",
+    "btn" : " BUY  NOW"
+}
+
+
+
+
+        ];
+
+        // Loop through the card data and create HTML elements
+        const cardContainer = document.getElementById("card");
+        for (let a = 0; a < card.length; a++) {
+            cardContainer.innerHTML += `
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card"style="background-color: beige;">
+                        <img src="${card[a].img}" class="card-img-top" alt="${card[a].title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${card[a].title}</h5>
+                            <p class="card-text">${card[a].des}</p>
+                            <a href="#" class="btn btn-custom">${card[a].btn}</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
