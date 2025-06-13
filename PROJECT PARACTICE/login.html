@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="shortcut icon" href="IMAGES/LOGO.png" type="image/x-icon">
+    <style>
+        /* Modern Style Update */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated Background Elements */
+        .bg-bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .bg-bubbles li {
+            position: absolute;
+            list-style: none;
+            background: rgba(255, 253, 253, 0.15);
+            animation: square 10s linear infinite;
+            bottom: -150px;
+        }
+
+        @keyframes square {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-1000px) rotate(720deg); }
+        }
+
+        /* Form Container */
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            width: 400px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .login-container h1 {
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            text-align: center;
+        }
+
+        /* Input Fields */
+        .form-group {
+            margin-bottom: 1.25rem;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            background-color: #f8fafc;
+        }
+
+        .form-group input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            background-color: white;
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 1rem;
+            bottom: 0.75rem;
+            color: #a0aec0;
+            font-size: 1.1rem;
+        }
+
+        /* Button Styles */
+        button[type="submit"] {
+            width: 100%;
+            padding: 0.75rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 0.5rem;
+        }
+
+        button[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Back Button */
+        .back-btn {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            z-index: 3;
+            background: rgba(255, 255, 255, 0.9);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-3px);
+            background: white;
+        }
+
+        .back-btn i {
+            color: #4a5568;
+            font-size: 1.2rem;
+        }
+
+        /* Login Link */
+        .signup-link {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #4a5568;
+            font-size: 0.875rem;
+        }
+
+        .signup-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .signup-link a:hover {
+            color: #764ba2;
+        }
+
+        /* Custom Alert */
+        .custom-alert {
+            position: fixed;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            z-index: 999;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .alert-success {
+            background: rgba(72, 187, 120, 0.9);
+            color: white;
+        }
+
+        .alert-error {
+            background: rgba(245, 101, 101, 0.9);
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .login-container {
+                width: 90%;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <ul class="bg-bubbles">
+        <li style="left: 10%; animation-delay: 0s"></li>
+        <li style="left: 20%; animation-delay: 2s"></li>
+        <li style="left: 30%; animation-delay: 4s"></li>
+        <li style="left: 40%; animation-delay: 6s"></li>
+        <li style="left: 50%; animation-delay: 8s"></li>
+        <li style="left: 60%; animation-delay: 10s"></li>
+        <li style="left: 70%; animation-delay: 12s"></li>
+        <li style="left: 80%; animation-delay: 14s"></li>
+        <li style="left: 90%; animation-delay: 16s"></li>
+    </ul>
+
+    <!-- Back Button -->
+    <a href="INDEX.HTML" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <!-- Login Form Container -->
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" name="email" required placeholder="Enter email">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" name="password" required placeholder="Enter password">
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+        <p class="signup-link">Don't have an account? <a href="singup.html">Sign up here</a></p>
+    </div>
+
+    <script>
+        // Form Submission
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Create Alert
+            const alert = document.createElement('div');
+            alert.className = 'custom-alert';
+
+            if (!email || !password) {
+                alert.classList.add('alert-error');
+                alert.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please fill all fields';
+            } else {
+                alert.classList.add('alert-success');
+                alert.innerHTML = '<i class="fas fa-check-circle"></i> Login successful!';
+                // Reset form
+                this.reset();
+            }
+
+            document.body.appendChild(alert);
+            
+            // Remove alert after 3 seconds
+            setTimeout(() => {
+                alert.remove();
+            }, 3000);
+        });
+
+        // Add background bubbles dynamically
+        const bubblesContainer = document.querySelector('.bg-bubbles');
+        for (let i = 0; i < 10; i++) {
+            const bubble = document.createElement('li');
+            bubble.style.left = `${Math.random() * 90}%`;
+            bubble.style.width = bubble.style.height = `${Math.random() * 50 + 20}px`;
+            bubble.style.animationDelay = `${Math.random() * 20}s`;
+            bubblesContainer.appendChild(bubble);
+        }
+    </script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+

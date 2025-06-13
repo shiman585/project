@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GALLERY </title>
+    <link rel="shortcut icon" href="IMAGES/LOGO.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+  .a a:hover{
+    text-transform: uppercase;
+  }
+  .nav-link {
+            color: white !important;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #ffc107 !important;
+            text-transform: uppercase;
+        }
+  
+  /* Gallery Heading Styles */
+  .gallery-heading {
+    font-size: 50px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Animated Underline */
+  .gallery-heading::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #ff6347; /* Tomato color */
+    bottom: 0;
+    left: -100%;
+    animation: slide 3s forwards;
+  }
+
+  /* Animation for the text */
+  .gallery-heading span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+  }
+
+  /* Animation for the underline sliding */
+  @keyframes slide {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 0;
+    }
+  }
+
+  /* Animation for text fade-in */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* Adding a nice shadow to the text */
+  .gallery-heading {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Responsive Image Styles */
+  .gallery-img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Ensure all images inside columns behave well */
+  .gallery-column img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /* box-shadow: 0 10px 10px rgba(236, 4, 4, 0.1); */
+    box-shadow: 0 10px 10px #c22c07;
+  }
+
+  /* Responsive layout for smaller screens */
+  @media (max-width: 767px) {
+    .gallery-heading {
+      font-size: 36px;
+      letter-spacing: 3px;
+    }
+
+    /* Stack columns vertically on smaller screens */
+    .col-lg-4, .col-md-12 {
+      width: 100% !important;
+      padding: 10px;
+    }
+  }
+
+  /* Responsive footer */
+  .footer {
+            background-color: black;
+            color: white;
+            padding: 2rem 0;
+        }
+        .footer a {
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .footer a:hover {
+            color: #ffc107;
+        }
+        .social-icons a {
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+</style>
+<body style="background-color:beige ;">
+    <!-- nav start -->
+    <nav class="navbar navbar-expand-lg navbar-dark position-sticky top-0" style="z-index: 1; background-color: black;">
+        <div class="container-fluid">
+          <div style="padding-right: 50px;" class="img"><img src="IMAGES/LOGO.png" alt="" height="60px"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="a" class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+              <li class="a" class="nav-item"><a class="nav-link text-white" href="about.html">About Us</a></li>
+              <li class="a" class="nav-item"><a class="nav-link text-white" href="contact.html">Contact Us</a></li>
+              <li class="a" class="nav-item"><a class="nav-link text-white" href="feedback.html">Feedback</a></li>
+              <li class="a" class="nav-item"><a class="nav-link text-white" href="gallery.html">Gallery</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="showall.html">Show All</a>
+            </li>
+            </ul>
+            <a href="login.html"><button class="btn btn-outline-light m-2">Login</button></a>
+          </div>
+        </div>
+      </nav>
+    <!-- nav end -->
+
+    <!-- gallery section start -->
+    <div class="container">
+      <div class="row m-2 text-center">
+        <h1 class="gallery-heading"><span>Our Gallery</span></h1>
+      </div>
+      <div class="row">
+        <!-- Gallery Columns -->
+        <div class="col-lg-4 col-md-6 gallery-column mb-4">
+          <img src="IMAGES/1.png" class="gallery-img" alt="Image 1" />
+          <img src="IMAGES/2.png" class="gallery-img" alt="Image 2" />
+        </div>
+        <div class="col-lg-4 col-md-6 gallery-column mb-4">
+          <img src="IMAGES/3.png" class="gallery-img" alt="Image 3" />
+          <img src="IMAGES/4.png" class="gallery-img" alt="Image 4" />
+        </div>
+        <div class="col-lg-4 gallery-column mb-4">
+          <img src="IMAGES/5.png" class="gallery-img" alt="Image 5" />
+          <img src="IMAGES/6.png" class="gallery-img" alt="Image 6" />
+        </div>
+        <!-- Additional gallery items -->
+        <div class="col-lg-4 gallery-column mb-4">
+          <img src="IMAGES/7.png" class="gallery-img" alt="Image 7" />
+          <img src="IMAGES/8.png" class="gallery-img" alt="Image 8" />
+        </div>
+        <div class="col-lg-4 gallery-column mb-4">
+          <img src="IMAGES/9.png" class="gallery-img" alt="Image 9" />
+          <img src="IMAGES/PRO 10 WEEPING TIGER.png" class="gallery-img" alt="Image 10" />
+        </div>
+        <div class="col-lg-4 gallery-column mb-4">
+          <img src="IMAGES/PRO 11 FISH SALAD.png" class="gallery-img" alt="Image 11" />
+          <img src="IMAGES/PRO 12 GREEN CURRY.png" class="gallery-img" alt="Image 12" />
+        </div>
+      </div>
+    </div>
+    <!-- gallery section end -->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container text-center">
+          <div class="social-icons mb-3">
+              <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.google.com/" target="_blank"><i class="fab fa-google"></i></a>
+              <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+          <p class="mb-0">© 2025 Copyright: Project.com</p>
+      </div>
+  </footer>
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

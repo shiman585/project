@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Easy Eats</title> <!-- Updated title -->
+    <link rel="shortcut icon" href="IMAGES/LOGO.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: beige;
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar {
+            background-color: black !important;
+        }
+        .navbar-brand img {
+            height: 60px;
+        }
+        .nav-link {
+            color: white !important;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #ffc107 !important;
+            text-transform: uppercase;
+        }
+        .btn-outline-light:hover {
+            background-color: #ffc107;
+            color: black !important;
+        }
+        .contact-form {
+            background: linear-gradient(150deg, orange 50%, black 50%);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form input, .contact-form select {
+            margin-bottom: 1rem;
+        }
+        .contact-form button {
+            background-color: #ffc107;
+            color: black;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .contact-form button:hover {
+            background-color: blue;
+            color: white;
+        }
+        .map-container iframe {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            background-color: black;
+            color: white;
+            padding: 2rem 0;
+        }
+        .footer a {
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .footer a:hover {
+            color: #ffc107;
+        }
+        .social-icons a {
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+        .contact-details {
+          background: linear-gradient(120deg, black 50%, orange 50%);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-details h2 {
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+        .contact-details h4 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            color: white;
+        }
+        .contact-details p {
+            font-size: 1rem;
+            color: white;
+            line-height: 1.6;
+        }
+        .thank-you-message {
+            display: none;
+            color: green;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark position-sticky top-0" style="z-index: 1;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="IMAGES/LOGO.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="showall.html">Show All</a>
+                    </li>
+                </ul>
+                <a href="login.html"><button class="btn btn-outline-light">Login</button></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Us Section -->
+    <div class="container my-5">
+        <div style="background-color: beige;" class="row text-white text-center py-5 mb-4">
+            <div class="col">
+                <h1 style="color: black;" class="display-4">Contact Us</h1>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Contact Form -->
+            <div class="col-md-6">
+                <div class="contact-form">
+                    <h2 class="text-center mb-4">FORM</h2>
+                    <form class="row g-3" id="contactForm">
+                        <div class="col-12">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter Your Full Name" required pattern="[A-Za-z]{9,}" title="Use letters only, and a minimum  9 characters ">                            
+                        </div>
+                        <div class="col-12">
+                            <label for="phoneNumber" class="form-label">Phone Number</label>
+                            <input type="number" class="form-control" id="phoneNumber" placeholder="Enter Your Number" required pattern="[0-9]{11,}" title="Use only numbers">
+                        </div>
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter Your Email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" title="Use a valid email format">
+                        </div>
+                        <div class="col-12">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter Your Password" required pattern="[A-Za-z0-9]{8,}" title="Password should be alphanumeric and at least 8 characters long">
+                        </div>
+                        <div class="col-12">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="address" placeholder="Enter Your Address" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label style="color: white;" for="city" class="form-label">City</label>
+                            <input placeholder="Enter Your City Name" type="text" class="form-control" id="city" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color: white;" for="state" class="form-label">State</label>
+                            <select id="state" class="form-select">
+                                <option selected>PUNJAB</option>
+                                <option>SINDH</option>
+                                <option>KPK</option>
+                                <option>GILGIT BALTISTAN</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label style="color: white;" for="zip" class="form-label">Zip</label>
+                            <input placeholder="Code" type="text" class="form-control" id="zip" required>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                                <label style="color: white;" class="form-check-label" for="gridCheck">
+                                    Agree to terms and conditions
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 btn-lg d-grid gap-2">
+                            <button type="submit" class="btn btn-dark">Submit</button>
+                        </div>
+                    </form>
+                    <!-- Thank You Message -->
+                    <div class="thank-you-message" id="thankYouMessage">
+                        <p>Thanks for submitting your information!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map and Contact Details -->
+            <div class="col-md-6">
+                <div class="map-container mb-4">
+                    <h2 class="text-center mb-4">Our Location</h2>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483107.2204028913!2d-4.114030988111766!3d52.571249751825825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760dc7c782f387%3A0x142d15fab9f97bbb!2seasy%20eats!5e0!3m2!1sen!2s!4v1739386709326!5m2!1sen!2s"  width="100%" height="300" style="border:1px solid beige;border-radius: 30px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="contact-details">
+                    <h2 class="text-center mb-4">Our Details</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Address</h4>
+                            <p>EASY EAT<br>
+                                215 Twickenham Rd,<br>
+                                Isleworth TW7 6AA, <br>
+                                United Kingdom</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Contact Info</h4>
+                            <p>Phone: +1 (123) 456-7890<br>
+                            Email: easyeat1123@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                            Saturday: 10:00 AM - 4:00 PM<br>
+                            Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="social-icons mb-3">
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.google.com/" target="_blank"><i class="fab fa-google"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="mb-0">© 2025 Copyright: Project.com</p>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            document.getElementById('thankYouMessage').style.display = 'block'; // Show thank you message
+            this.reset(); // Reset the form
+        });
+    </script>
+</body>
+</html>
